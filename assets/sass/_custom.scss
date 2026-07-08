@@ -101,3 +101,122 @@ html.dark ::selection {
   from, to { opacity: 0; }
   50% { opacity: 1; }
 }
+
+// Credly badge container
+.author-credentials {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge-link {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), filter 0.25s ease;
+  
+  &:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 4px 12px rgba(19, 108, 70, 0.25)); /* Pine green glow in light mode */
+  }
+}
+
+.badge-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+}
+
+// Dark Mode badge hover glow
+html.dark .badge-link:hover {
+  filter: drop-shadow(0 0 15px rgba(80, 250, 123, 0.55)); /* Bright cyber-green glow in dark mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .badge-link:hover {
+    filter: drop-shadow(0 0 15px rgba(80, 250, 123, 0.55));
+  }
+}
+
+// Bio details (cybersecurity style)
+.bio-details {
+  max-width: 550px;
+  margin: 2.2rem auto;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  .bio-intro {
+    text-align: center;
+    font-size: 1.05rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .bio-section {
+    margin-bottom: 1.4rem;
+  }
+
+  .bio-section-title {
+    font-family: Consolas, monaco, monospace;
+    font-size: 1.02rem;
+    color: #136c46; /* Pine green in light mode */
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 3px;
+  }
+
+  .bio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding-left: 0.75rem;
+  }
+
+  .bio-item {
+    font-family: inherit;
+    strong {
+      color: #333638;
+    }
+  }
+
+  .bio-interests {
+    padding-left: 0.75rem;
+    margin: 0;
+  }
+
+  .bio-closing {
+    text-align: center;
+    margin-top: 2rem;
+    font-style: italic;
+    opacity: 0.85;
+  }
+}
+
+// Dark Mode Overrides for bio-details
+html.dark .bio-details {
+  .bio-section-title {
+    color: #50fa7b; /* Cyber green */
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .bio-item strong {
+    color: #babdc4;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .bio-details {
+    .bio-section-title {
+      color: #50fa7b;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .bio-item strong {
+      color: #babdc4;
+    }
+  }
+}
+
+// Spacing adjustments
+.author {
+  margin-bottom: 2.5rem;
+}

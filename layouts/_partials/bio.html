@@ -11,15 +11,42 @@
     {{ $image1x := $image.Fill "120x120 center webp" }}
     {{ $image2x := $image.Fill "240x240 center webp" }}
     {{ $image3x := $image.Fill "360x360 center webp" }}
-    <img
-        class="author-avatar"
-        src="{{ $image1x.RelPermalink }}"
-        srcset="{{ $image2x.RelPermalink }} 2x, {{ $image3x.RelPermalink }} 3x"
-        alt="{{ $avatar_img_alt }}"
-        width="{{ $image1x.Width }}"
-        height="{{ $image1x.Height }}" />
+    <img class="author-avatar" src="{{ $image1x.RelPermalink }}"
+        srcset="{{ $image2x.RelPermalink }} 2x, {{ $image3x.RelPermalink }} 3x" alt="{{ $avatar_img_alt }}"
+        width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" />
     {{ end }}
     {{ end }}
     <h2 class="author-name">{{ .Site.Params.author.intro }}</h2>
     <p class="author-bio">{{ .Site.Params.author.description }}</p>
+
+    <div class="bio-details">
+        <p class="bio-intro">I'm a Junior Cybersecurity Analyst based in Italy 🇮🇹</p>
+
+        <div class="bio-section">
+            <h3 class="bio-section-title">&gt; Tools & Technologies</h3>
+            <div class="bio-grid">
+                <div class="bio-item"><strong>SIEM:</strong> Elastic, Splunk, Microsoft Sentinel</div>
+                <div class="bio-item"><strong>EDR/XDR:</strong> CrowdStrike Falcon, SentinelOne, Sophos Taegis,
+                    Microsoft Defender</div>
+                <div class="bio-item"><strong>Network Security:</strong> Darktrace</div>
+                <div class="bio-item"><strong>IAM Security:</strong> Microsoft Entra ID (formerly Azure AD)</div>
+            </div>
+        </div>
+
+        <div class="bio-section">
+            <h3 class="bio-section-title">&gt; Interests</h3>
+            <p class="bio-interests">Cyber Threat Intelligence, Threat Hunting, Security Architecture</p>
+        </div>
+
+        <p class="bio-closing">I blog about all kinds of stuff that I find interesting, mainly related to the
+            cybersecurity world.</p>
+    </div>
+
+    <div class="author-credentials">
+        <a href="https://www.credly.com/badges/343ae31b-dfc6-4ee9-a8c0-27b8512570ee" target="_blank"
+            rel="noopener noreferrer" class="badge-link" title="Verify Certified in Cybersecurity (CC) on Credly">
+            <img src="https://images.credly.com/images/2859c37a-015b-40a6-b570-4bdd7e849b05/linkedin_thumb_image.png"
+                alt="ISC2 Certified in Cybersecurity (CC)" class="badge-image" />
+        </a>
+    </div>
 </div>
