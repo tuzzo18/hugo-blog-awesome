@@ -8,9 +8,9 @@
         <image width="25em" height="25em" href="{{ $image.RelPermalink }}" />
     </svg>
     {{ else }}
-    {{ $image1x := $image.Fill "70x70 center webp" }}
-    {{ $image2x := $image.Fill "140x140 center webp" }}
-    {{ $image3x := $image.Fill "210x210 center webp" }}
+    {{ $image1x := $image.Fill "120x120 center webp" }}
+    {{ $image2x := $image.Fill "240x240 center webp" }}
+    {{ $image3x := $image.Fill "360x360 center webp" }}
     <img
         class="author-avatar"
         src="{{ $image1x.RelPermalink }}"

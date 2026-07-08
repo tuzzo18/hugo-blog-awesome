@@ -1,0 +1,103 @@
+// Terminal Logo Styling
+.logo {
+  text-decoration: none !important;
+  font-family: Consolas, monaco, monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  transition: none;
+  opacity: 1 !important;
+
+  .terminal-prompt {
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: -0.2px;
+  }
+
+  .term-gt {
+    color: #136c46;
+    margin-right: 4px;
+  }
+
+  .term-user, .term-host {
+    color: #136c46; /* Pine green in light mode */
+  }
+
+  .term-at, .term-colon, .term-dollar {
+    color: #434648;
+  }
+
+  .term-dir {
+    color: #1256b7; /* Royal blue in light mode */
+  }
+
+  .term-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: #136c46;
+    margin-left: 4px;
+    animation: terminal-blink 1.2s step-end infinite;
+  }
+}
+
+// Selection Color Styling (Cybersecurity touch)
+::selection {
+  background: #50fa7b; /* Cyber green selection */
+  color: #0d122b; /* Dark theme text color */
+}
+
+// Dark Mode Overrides
+html.dark .logo {
+  .term-gt {
+    color: #50fa7b;
+  }
+  .term-user, .term-host {
+    color: #50fa7b; /* Cyber green */
+  }
+  .term-at, .term-colon, .term-dollar {
+    color: #babdc4;
+  }
+  .term-dir {
+    color: #8be9fd; /* Cyber cyan */
+  }
+  .term-cursor {
+    background-color: #50fa7b;
+  }
+}
+
+html.dark ::selection {
+  background: #50fa7b;
+  color: #131418;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .logo {
+    .term-gt {
+      color: #50fa7b;
+    }
+    .term-user, .term-host {
+      color: #50fa7b;
+    }
+    .term-at, .term-colon, .term-dollar {
+      color: #babdc4;
+    }
+    .term-dir {
+      color: #8be9fd;
+    }
+    .term-cursor {
+      background-color: #50fa7b;
+    }
+  }
+
+  html:not(.light) ::selection {
+    background: #50fa7b;
+    color: #131418;
+  }
+}
+
+@keyframes terminal-blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}

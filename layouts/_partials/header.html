@@ -1,7 +1,9 @@
 <div class="navbar" role="navigation">
     <nav class="menu" aria-label="Main Navigation">
         <a href="{{ .Site.Home.Permalink }}" class="logo">
-            {{ partial "svgs/home.svg" (dict "height" 25 "width" 25) . }}
+            <span class="terminal-prompt">
+                <span class="term-gt">&gt;</span> <span class="term-user">riccardo</span><span class="term-at">@</span><span class="term-host">blog</span><span class="term-colon">:</span><span class="term-dir">~</span><span class="term-dollar">$</span><span class="term-cursor"></span>
+            </span>
         </a>
         <input type="checkbox" id="menu-trigger" class="menu-trigger" />
         <label for="menu-trigger">
