@@ -102,42 +102,6 @@ html.dark ::selection {
   50% { opacity: 1; }
 }
 
-// Credly badge container
-.author-credentials {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.badge-link {
-  display: inline-block;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), filter 0.25s ease;
-  
-  &:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 4px 12px rgba(19, 108, 70, 0.25)); /* Pine green glow in light mode */
-  }
-}
-
-.badge-image {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  display: block;
-}
-
-// Dark Mode badge hover glow
-html.dark .badge-link:hover {
-  filter: drop-shadow(0 0 15px rgba(80, 250, 123, 0.55)); /* Bright cyber-green glow in dark mode */
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not(.light) .badge-link:hover {
-    filter: drop-shadow(0 0 15px rgba(80, 250, 123, 0.55));
-  }
-}
-
 // Bio details (cybersecurity style)
 .bio-details {
   max-width: 550px;
@@ -185,6 +149,21 @@ html.dark .badge-link:hover {
     margin: 0;
   }
 
+  .bio-certs {
+    padding-left: 1.6rem;
+    margin: 0;
+    li {
+      margin-bottom: 0.35rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .cert-date {
+      color: #707070; /* Light grey in light mode */
+      font-size: 0.9em;
+    }
+  }
+
   .bio-closing {
     text-align: center;
     margin-top: 2rem;
@@ -202,6 +181,9 @@ html.dark .bio-details {
   .bio-item strong {
     color: #babdc4;
   }
+  .bio-certs .cert-date {
+    color: #8a8d93; /* Lighter grey in dark mode */
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -212,6 +194,9 @@ html.dark .bio-details {
     }
     .bio-item strong {
       color: #babdc4;
+    }
+    .bio-certs .cert-date {
+      color: #8a8d93;
     }
   }
 }
